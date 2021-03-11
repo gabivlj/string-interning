@@ -64,12 +64,12 @@ impl<'a> StringInternal<'a> {
     pub fn add<T: AsRef<str>>(&mut self, string: T) -> StringId {
         let string = string.as_ref();
         let val = self.strings.get(string);
-        if val.is_none() {
+        if let Some(val) = val {
+            *val
+        } else {
             let (s, id) = self.intern(string);
             self.strings.insert(s, id);
             id
-        } else {
-            *val.unwrap()
         }
     }
 
