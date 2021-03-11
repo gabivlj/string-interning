@@ -1,6 +1,6 @@
 ## String Interning made super simple and performant
 
-```rs
+```rust
 let mut db = StringInterning::with_capacity(100000);
 
 // you can also do
