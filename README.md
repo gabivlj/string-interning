@@ -24,3 +24,9 @@ for i in 0..5000000 {
 ```
 
 I created this for a personal project that I just had too much string cloning.
+
+## What is string interning?
+Just a way of keeping a single copy of a string in memory,
+if you add a new string in the data structure it will be allocated,
+but when you try to add it again it won't be allocated and return the same id,
+if you give that id to the data structure it will return the reference of the string.
