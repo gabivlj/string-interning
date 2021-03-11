@@ -1,7 +1,7 @@
 #![allow(unused_variables)]
 use std::collections::HashMap;
 
-/// Reference to a internal string.
+/// Reference to an internal string.
 #[derive(Copy, Clone, Debug, PartialEq)]
 pub struct StringId(usize);
 
@@ -60,7 +60,7 @@ impl<'a> StringInternal<'a> {
         }
     }
 
-    /// Adds a new string, keep in mind that it will be cloned inside the code.
+    /// Adds a new string, keep in mind that it will be cloned if it's a new string.
     pub fn add<T: AsRef<str>>(&mut self, string: T) -> StringId {
         let string = string.as_ref();
         let val = self.strings.get(string);
